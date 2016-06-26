@@ -40,6 +40,8 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+export LC_CTYPE=en_US.UTF8
+
 VIRTUAL_ENV="/Users/renangreca/OneDrive/repos/redes-sem-fio/env"
 export VIRTUAL_ENV
 

@@ -4,43 +4,55 @@
 # Renan Greca
 # Junho de 2016
 
+# ??? FLOODING para descoberta de rede
+
 import argparse
 import networkx as nx
 import matplotlib.pyplot as plt
+import numpy as np
 
 parser = argparse.ArgumentParser(description='''Runs Dijkstra algorithm on graph.''')
 parser.add_argument('-g', '--graph', type=str, required=True,
                     help='''File which contains graph edges''')
 
 def main(args):
-	edges = []
-	weights = {}
+    edges = []
+    weights = {}
 
-	with open(args.graph) as file:
-		rows = file.readlines()
+    with open(args.graph) as file:
+        rows = file.readlines()
 
-		for row in rows:
-			edge = row.split()
-			edges.append( (edge[0], edge[1]) )
-			weights[(edge[0], edge[1])] = edge[2]
+        for row in rows:
+            edge = row.split()
+            edges.append( (edge[0], edge[1], edge[2]) )
+            weights[(edge[0], edge[1])] = edge[2]
 
-		draw_graph(edges, labels=weights)
+        G = build_graph(edges)
 
-# graph is in format [(a,b)]
-# labels is in format {(a,b): x}
-def draw_graph(graph, labels=None, graph_layout='shell',
+        source = nx.nodes(G)[0]
+        dist, prev = dijkstra(G, source)
+        print 'dist:', dist
+        print 'prev:', prev
+
+        draw_graph(G, labels=weights, graph_layout='spring')
+
+# Converts input into an nx graph
+# edges is in format [(node, node, weight)]
+def build_graph(edges):
+    G=nx.Graph()
+
+    # add edges
+    for edge in edges:
+        G.add_edge(edge[0], edge[1], weight=int(edge[2]))
+
+    return G
+
+def draw_graph(G, labels=None, graph_layout='shell',
                node_size=1600, node_color='blue', node_alpha=0.3,
                node_text_size=12,
                edge_color='blue', edge_alpha=0.3, edge_tickness=1,
                edge_text_pos=0.3,
                text_font='sans-serif'):
-
-    # create networkx graph
-    G=nx.Graph()
-
-    # add edges
-    for edge in graph:
-        G.add_edge(edge[0], edge[1], weight=labels[(edge[0], edge[1])])
 
     # these are different layouts for the network you may try
     # shell seems to work best
@@ -62,14 +74,53 @@ def draw_graph(graph, labels=None, graph_layout='shell',
                             font_family=text_font)
 
     if labels is None:
-        labels = range(len(graph))
+        labels = range(len(G))
 
-    edge_labels = dict(zip(graph, labels))
+    edge_labels = dict(zip(G, labels))
     nx.draw_networkx_edge_labels(G, graph_pos, edge_labels=labels, 
                                  label_pos=edge_text_pos)
 
     # show graph
     plt.show()
+
+# Dijkstra's algorithm, based on pseudocode found at
+# https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Pseudocode
+def dijkstra(G, source):
+
+    q = []
+    dist = {}
+    prev = {}
+
+    for v in nx.nodes(G):
+        dist[v] = np.Infinity
+        prev[v] = None
+        q.append(v)
+
+    dist[source] = 0
+
+    while q:
+        u = min_dist(q, dist)
+        q.remove(u)
+
+        for v in nx.all_neighbors(G, u):
+
+            alt = dist[u] + G[u][v]['weight']
+
+            if alt < dist[v]:
+                dist[v] = alt
+                prev[v] = u
+
+    return dist, prev
+
+def min_dist(q, dist):
+    m = np.Infinity
+    i = None
+    for n in q:
+        if dist[n] < m:
+            m = dist[n]
+            i = n
+
+    return i
 
 if __name__ == '__main__':
     args = parser.parse_args()
