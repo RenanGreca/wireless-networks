@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Darwin
+
+class Graph {
+    var nodes:[Node]
+    
+    init(nodes:[Node]) {
+        self.nodes = nodes
+    }
+    
+    func dijkstra(source:Node) {
+        var q = [Node]()
+        var dist = [String: Int]()
+        var prev = [String: Node]()
+        var path = [Node]()
+        
+        for v in self.nodes {
+            dist[v.id] = 999999999
+            prev[v.id] = nil
+            q += [v]
+        }
+        
+        dist[source.id] = 0
+        
+        while q.count &gt; 0 {
+            let i = minDist(q: q, dist: dist)
+            let u = q[i]
+            q.remove(at:i)
+            
+            for v in nodes where u.inRange(node: v) {
+                let alt = dist[u.id]! + 1
+                if alt &lt; dist[v.id] {
+                    dist[v.id] = alt
+                    prev[v.id] = u
+                }
+            }
+        }
+        
+        dist
+        prev
+        
+    }
+    
+    private func minDist(q:[Node], dist:[String: Int]) -&gt; Int {
+        var m = 999999999
+        var index:Int = 0
+        for (i, n) in q.enumerated() {
+            if dist[n.id] &lt; m {
+                m = dist[n.id]!
+                index = i
+            }
+        }
+        return index
+    }
+}
+
+class Node {
+    let id:String
+    let point:Point
+    let range:Double
+    let circle:Circle
+    let rangeCircle:Circle
+    let text:Text
+    
+    init(range:Double, x: Double, y: Double, label:String) {
+        self.id = label
+        self.range = range
+        
+        circle = Circle(radius:1.0)
+        rangeCircle = Circle(radius:range)
+        
+        text = Text(string: label, fontSize: 32.0, fontName: "San Francisco", color: .black)
+        
+        point = Point(x: x, y: y)
+        circle.center = point
+        rangeCircle.center = point
+        text.center = point
+        
+        rangeCircle.color = Color(colorLiteralRed: 0, green: 0, blue: 255, alpha: 0.2)
+    }
+    
+    func inRange(node:Node) -&gt; Bool {
+        if self.euclidianDistance(p: node.point) &lt;= self.range {
+            let line = Line(start: self.point, end: node.point)
+            return true
+        }
+        return false
+    }
+    
+    func euclidianDistance(p:Point) -&gt; Double {
+        let x = p.x - self.point.x
+        let y = p.y - self.point.y
+        let z = x*x + y*y
+        return sqrt(z)
+    }
+}
+
+func createNodes() -&gt; [Node] {
+    var nodes = [Node]()
+    let pos:[(Double, Double)] = [(0, 0), (10, 10), (20, 15), (-15, 0), (10, -10)]
+    for i in 0..&lt;pos.count {
+        let n = Node(range: 15, x:pos[i].0, y:pos[i].1, label: "\(i)")
+        nodes += [n]
+    }
+    
+    return nodes
+}
+
+let nodes = createNodes()
+let graph = Graph(nodes: nodes)
+graph.dijkstra(source: nodes[0])
+</string>
+			<key>ModifiedRange</key>
+			<string>{226, 2676}</string>
+			<key>OriginalContent</key>
+			<string>let circle = Circle()
+circle.draggable = true
+</string>
+			<key>OriginalRange</key>
+			<string>{226, 46}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Shapes.playgroundchapter/Pages/Canvas.playgroundpage/Contents.swift</string>
+</dict>
+</plist>

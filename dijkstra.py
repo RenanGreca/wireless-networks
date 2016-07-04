@@ -4,8 +4,6 @@
 # Renan Greca
 # Junho de 2016
 
-# ??? FLOODING para descoberta de rede
-
 import argparse
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -19,6 +17,7 @@ def main(args):
     edges = []
     weights = {}
 
+    # Read graph from files
     with open(args.graph) as file:
         rows = file.readlines()
 
@@ -27,9 +26,12 @@ def main(args):
             edges.append( (edge[0], edge[1], edge[2]) )
             weights[(edge[0], edge[1])] = edge[2]
 
+        # Create graph object
         G = build_graph(edges)
 
+        # Source is first node
         source = nx.nodes(G)[0]
+        # Run dijkstra
         dist, prev = dijkstra(G, source)
         print 'dist:', dist
         print 'prev:', prev
@@ -47,6 +49,7 @@ def build_graph(edges):
 
     return G
 
+# Generate visual output for graph
 def draw_graph(G, labels=None, graph_layout='shell',
                node_size=1600, node_color='blue', node_alpha=0.3,
                node_text_size=12,
@@ -112,6 +115,7 @@ def dijkstra(G, source):
 
     return dist, prev
 
+# Find the node in q with the lowest dist
 def min_dist(q, dist):
     m = np.Infinity
     i = None

@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F1178FC1D2A9B7C001C3696 /* Wireless Network.playgroundbook in Resources */ = {isa = PBXBuildFile; fileRef = 1F1178FB1D2A9B7C001C3696 /* Wireless Network.playgroundbook */; };
+		1F1179001D2A9BDA001C3696 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1178FF1D2A9BDA001C3696 /* Graph.swift */; };
+		1F1179021D2A9BF1001C3696 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1179011D2A9BF1001C3696 /* Node.swift */; };
+		1F1179041D2AA1DD001C3696 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1179031D2AA1DD001C3696 /* Extensions.swift */; };
+		1F1179061D2AA40D001C3696 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1179051D2AA40D001C3696 /* Edge.swift */; };
+		1FA332D61D26A55C006AFF11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA332D51D26A55C006AFF11 /* AppDelegate.swift */; };
+		1FA332D81D26A55C006AFF11 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA332D71D26A55C006AFF11 /* GameScene.swift */; };
+		1FA332DA1D26A55C006AFF11 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FA332D91D26A55C006AFF11 /* GameScene.sks */; };
+		1FA332DC1D26A55C006AFF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA332DB1D26A55C006AFF11 /* Assets.xcassets */; };
+		1FA332DF1D26A55C006AFF11 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FA332DD1D26A55C006AFF11 /* MainMenu.xib */; };
+		1FA332EA1D26A55C006AFF11 /* WirelessNetworksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA332E91D26A55C006AFF11 /* WirelessNetworksTests.swift */; };
+		1FA332F51D26A55C006AFF11 /* WirelessNetworksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA332F41D26A55C006AFF11 /* WirelessNetworksUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FA332E61D26A55C006AFF11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FA332CA1D26A55C006AFF11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FA332D11D26A55C006AFF11;
+			remoteInfo = WirelessNetworks;
+		};
+		1FA332F11D26A55C006AFF11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FA332CA1D26A55C006AFF11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FA332D11D26A55C006AFF11;
+			remoteInfo = WirelessNetworks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F1178FB1D2A9B7C001C3696 /* Wireless Network.playgroundbook */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Wireless Network.playgroundbook"; sourceTree = "<group>"; };
+		1F1178FD1D2A9BB7001C3696 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		1F1178FF1D2A9BDA001C3696 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		1F1179011D2A9BF1001C3696 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		1F1179031D2AA1DD001C3696 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1F1179051D2AA40D001C3696 /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		1FA332D21D26A55C006AFF11 /* WirelessNetworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WirelessNetworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA332D51D26A55C006AFF11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1FA332D71D26A55C006AFF11 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		1FA332D91D26A55C006AFF11 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		1FA332DB1D26A55C006AFF11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1FA332DE1D26A55C006AFF11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1FA332E01D26A55C006AFF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FA332E51D26A55C006AFF11 /* WirelessNetworksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WirelessNetworksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA332E91D26A55C006AFF11 /* WirelessNetworksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirelessNetworksTests.swift; sourceTree = "<group>"; };
+		1FA332EB1D26A55C006AFF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FA332F01D26A55C006AFF11 /* WirelessNetworksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WirelessNetworksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA332F41D26A55C006AFF11 /* WirelessNetworksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirelessNetworksUITests.swift; sourceTree = "<group>"; };
+		1FA332F61D26A55C006AFF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FA332CF1D26A55C006AFF11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FA332E21D26A55C006AFF11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FA332ED1D26A55C006AFF11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F1178FE1D2A9BC9001C3696 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F1178FF1D2A9BDA001C3696 /* Graph.swift */,
+				1F1179011D2A9BF1001C3696 /* Node.swift */,
+				1F1179051D2AA40D001C3696 /* Edge.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1FA332C91D26A55C006AFF11 = {
+			isa = PBXGroup;
+			children = (
+				1FA332D41D26A55C006AFF11 /* WirelessNetworks */,
+				1FA332E81D26A55C006AFF11 /* WirelessNetworksTests */,
+				1FA332F31D26A55C006AFF11 /* WirelessNetworksUITests */,
+				1FA332D31D26A55C006AFF11 /* Products */,
+				1F1178FB1D2A9B7C001C3696 /* Wireless Network.playgroundbook */,
+			);
+			sourceTree = "<group>";
+		};
+		1FA332D31D26A55C006AFF11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FA332D21D26A55C006AFF11 /* WirelessNetworks.app */,
+				1FA332E51D26A55C006AFF11 /* WirelessNetworksTests.xctest */,
+				1FA332F01D26A55C006AFF11 /* WirelessNetworksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FA332D41D26A55C006AFF11 /* WirelessNetworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F1178FE1D2A9BC9001C3696 /* Model */,
+				1FA332D51D26A55C006AFF11 /* AppDelegate.swift */,
+				1FA332D71D26A55C006AFF11 /* GameScene.swift */,
+				1FA332D91D26A55C006AFF11 /* GameScene.sks */,
+				1FA332DB1D26A55C006AFF11 /* Assets.xcassets */,
+				1FA332DD1D26A55C006AFF11 /* MainMenu.xib */,
+				1FA332E01D26A55C006AFF11 /* Info.plist */,
+				1F1178FD1D2A9BB7001C3696 /* Playground.playground */,
+				1F1179031D2AA1DD001C3696 /* Extensions.swift */,
+			);
+			path = WirelessNetworks;
+			sourceTree = "<group>";
+		};
+		1FA332E81D26A55C006AFF11 /* WirelessNetworksTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FA332E91D26A55C006AFF11 /* WirelessNetworksTests.swift */,
+				1FA332EB1D26A55C006AFF11 /* Info.plist */,
+			);
+			path = WirelessNetworksTests;
+			sourceTree = "<group>";
+		};
+		1FA332F31D26A55C006AFF11 /* WirelessNetworksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1FA332F41D26A55C006AFF11 /* WirelessNetworksUITests.swift */,
+				1FA332F61D26A55C006AFF11 /* Info.plist */,
+			);
+			path = WirelessNetworksUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FA332D11D26A55C006AFF11 /* WirelessNetworks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FA332F91D26A55C006AFF11 /* Build configuration list for PBXNativeTarget "WirelessNetworks" */;
+			buildPhases = (
+				1FA332CE1D26A55C006AFF11 /* Sources */,
+				1FA332CF1D26A55C006AFF11 /* Frameworks */,
+				1FA332D01D26A55C006AFF11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WirelessNetworks;
+			productName = WirelessNetworks;
+			productReference = 1FA332D21D26A55C006AFF11 /* WirelessNetworks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1FA332E41D26A55C006AFF11 /* WirelessNetworksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FA332FC1D26A55C006AFF11 /* Build configuration list for PBXNativeTarget "WirelessNetworksTests" */;
+			buildPhases = (
+				1FA332E11D26A55C006AFF11 /* Sources */,
+				1FA332E21D26A55C006AFF11 /* Frameworks */,
+				1FA332E31D26A55C006AFF11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FA332E71D26A55C006AFF11 /* PBXTargetDependency */,
+			);
+			name = WirelessNetworksTests;
+			productName = WirelessNetworksTests;
+			productReference = 1FA332E51D26A55C006AFF11 /* WirelessNetworksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1FA332EF1D26A55C006AFF11 /* WirelessNetworksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FA332FF1D26A55C006AFF11 /* Build configuration list for PBXNativeTarget "WirelessNetworksUITests" */;
+			buildPhases = (
+				1FA332EC1D26A55C006AFF11 /* Sources */,
+				1FA332ED1D26A55C006AFF11 /* Frameworks */,
+				1FA332EE1D26A55C006AFF11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FA332F21D26A55C006AFF11 /* PBXTargetDependency */,
+			);
+			name = WirelessNetworksUITests;
+			productName = WirelessNetworksUITests;
+			productReference = 1FA332F01D26A55C006AFF11 /* WirelessNetworksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FA332CA1D26A55C006AFF11 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = renangreca;
+				TargetAttributes = {
+					1FA332D11D26A55C006AFF11 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					1FA332E41D26A55C006AFF11 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 1FA332D11D26A55C006AFF11;
+					};
+					1FA332EF1D26A55C006AFF11 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 1FA332D11D26A55C006AFF11;
+					};
+				};
+			};
+			buildConfigurationList = 1FA332CD1D26A55C006AFF11 /* Build configuration list for PBXProject "WirelessNetworks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1FA332C91D26A55C006AFF11;
+			productRefGroup = 1FA332D31D26A55C006AFF11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FA332D11D26A55C006AFF11 /* WirelessNetworks */,
+				1FA332E41D26A55C006AFF11 /* WirelessNetworksTests */,
+				1FA332EF1D26A55C006AFF11 /* WirelessNetworksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FA332D01D26A55C006AFF11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FA332DC1D26A55C006AFF11 /* Assets.xcassets in Resources */,
+				1F1178FC1D2A9B7C001C3696 /* Wireless Network.playgroundbook in Resources */,
+				1FA332DA1D26A55C006AFF11 /* GameScene.sks in Resources */,
+				1FA332DF1D26A55C006AFF11 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FA332E31D26A55C006AFF11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FA332EE1D26A55C006AFF11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FA332CE1D26A55C006AFF11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1179041D2AA1DD001C3696 /* Extensions.swift in Sources */,
+				1F1179001D2A9BDA001C3696 /* Graph.swift in Sources */,
+				1F1179061D2AA40D001C3696 /* Edge.swift in Sources */,
+				1FA332D81D26A55C006AFF11 /* GameScene.swift in Sources */,
+				1FA332D61D26A55C006AFF11 /* AppDelegate.swift in Sources */,
+				1F1179021D2A9BF1001C3696 /* Node.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FA332E11D26A55C006AFF11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FA332EA1D26A55C006AFF11 /* WirelessNetworksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FA332EC1D26A55C006AFF11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FA332F51D26A55C006AFF11 /* WirelessNetworksUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FA332E71D26A55C006AFF11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FA332D11D26A55C006AFF11 /* WirelessNetworks */;
+			targetProxy = 1FA332E61D26A55C006AFF11 /* PBXContainerItemProxy */;
+		};
+		1FA332F21D26A55C006AFF11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FA332D11D26A55C006AFF11 /* WirelessNetworks */;
+			targetProxy = 1FA332F11D26A55C006AFF11 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1FA332DD1D26A55C006AFF11 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FA332DE1D26A55C006AFF11 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1FA332F71D26A55C006AFF11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1FA332F81D26A55C006AFF11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1FA332FA1D26A55C006AFF11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WirelessNetworks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.renangreca.WirelessNetworks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1FA332FB1D26A55C006AFF11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WirelessNetworks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.renangreca.WirelessNetworks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1FA332FD1D26A55C006AFF11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = WirelessNetworksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.renangreca.WirelessNetworksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WirelessNetworks.app/Contents/MacOS/WirelessNetworks";
+			};
+			name = Debug;
+		};
+		1FA332FE1D26A55C006AFF11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WirelessNetworksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.renangreca.WirelessNetworksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WirelessNetworks.app/Contents/MacOS/WirelessNetworks";
+			};
+			name = Release;
+		};
+		1FA333001D26A55C006AFF11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = WirelessNetworksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.renangreca.WirelessNetworksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WirelessNetworks;
+			};
+			name = Debug;
+		};
+		1FA333011D26A55C006AFF11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WirelessNetworksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.renangreca.WirelessNetworksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WirelessNetworks;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FA332CD1D26A55C006AFF11 /* Build configuration list for PBXProject "WirelessNetworks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FA332F71D26A55C006AFF11 /* Debug */,
+				1FA332F81D26A55C006AFF11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FA332F91D26A55C006AFF11 /* Build configuration list for PBXNativeTarget "WirelessNetworks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FA332FA1D26A55C006AFF11 /* Debug */,
+				1FA332FB1D26A55C006AFF11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FA332FC1D26A55C006AFF11 /* Build configuration list for PBXNativeTarget "WirelessNetworksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FA332FD1D26A55C006AFF11 /* Debug */,
+				1FA332FE1D26A55C006AFF11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FA332FF1D26A55C006AFF11 /* Build configuration list for PBXNativeTarget "WirelessNetworksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FA333001D26A55C006AFF11 /* Debug */,
+				1FA333011D26A55C006AFF11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FA332CA1D26A55C006AFF11 /* Project object */;
+}
