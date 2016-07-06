@@ -54,10 +54,8 @@ class GameScene: SKScene {
     
     override func mouseDragged(theEvent: NSEvent) {
         let location = theEvent.locationInNode(self)
-        print(location)
         
         if let node = self.selectedNode {
-            print(node.id)
             node.position = location
             node.update()
         }
@@ -70,12 +68,12 @@ class GameScene: SKScene {
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-        self.graph?.findEdges()
         
         self.removeChildrenInArray(self.lines)
         self.lines = []
-        
         self.drawEdges(self.graph!.edges)
+        
+//        self.graph?.findEdges()
         
         if self.calculatingDijkstra {
             self.graph!.dijkstra(from!)
@@ -109,6 +107,14 @@ class GameScene: SKScene {
         }
     }
     
+    func eraseEdges() {
+        for l in self.lines {
+            l.removeFromParent()
+        }
+        self.lines = [SKShapeNode]()
+    }
+    
+    
     
     func drawPath(from: Node, to: Node) {
         self.pathLines = []
@@ -125,6 +131,7 @@ class GameScene: SKScene {
                 CGPathMoveToPoint(path, nil, u.position.x, u.position.y)
                 CGPathAddLineToPoint(path, nil, v.position.x, v.position.y)
                 line.path = path
+                line.zPosition = 36
                 
                 self.addChild(line)
                 self.pathLines += [line]
@@ -141,6 +148,7 @@ class GameScene: SKScene {
             CGPathMoveToPoint(path, nil, u.position.x, u.position.y)
             CGPathAddLineToPoint(path, nil, v.position.x, v.position.y)
             line.path = path
+            line.zPosition = 36
             
             self.addChild(line)
             self.pathLines += [line]

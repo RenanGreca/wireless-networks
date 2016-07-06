@@ -20,6 +20,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var dTo: NSTextField!
     @IBOutlet weak var btnGo: NSButton!
     
+//    @IBOutlet weak var sFrom: NSPopUpButton!
+//    @IBOutlet weak var sTo: NSPopUpButton!
+    
     var scene:GameScene?
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -37,6 +40,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.skView!.showsNodeCount = true
             
             self.scene = scene
+            
+//            sFrom.addItemsWithTitles([String](scene.graph!.nodes.keys))
+//            sTo.addItemsWithTitles([String](scene.graph!.nodes.keys))
         }
     }
     
@@ -48,7 +54,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if let from = scene!.graph?.nodes[idFrom], to = scene!.graph?.nodes[idTo] {
             scene?.calculateDijkstra(from, to: to)
+        } else {
+            print("Incorrect node IDs")
         }
+    }
+    
+    @IBAction func flood(sender: AnyObject) {
+        guard self.scene != nil else { print("No GameScene"); return }
+        
+        self.scene?.graph?.edges = [Edge]()
+        self.scene?.graph?.flood(scene!.graph!.nodes["0"]!, explored:[])
+    }
+    
+    func updateSelectors(node: Node) {
+//        sFrom.addItemWithTitle(node.id)
+//        sTo.addItemWithTitle(node.id)
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {

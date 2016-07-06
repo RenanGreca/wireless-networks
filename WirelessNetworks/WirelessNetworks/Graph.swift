@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 class Graph {
     var nodes:[String: Node]
@@ -17,6 +18,7 @@ class Graph {
         self.edges = []
     }
     
+    // God-mode find edges
     func findEdges() {
         self.edges = []
         for (_, u) in nodes {
@@ -29,6 +31,21 @@ class Graph {
                 }
             }
         }
+    }
+    
+    func flood(source: Node, explored: [Node]) {
+        let e = explored+[source]
+        source.edges = []
+        for (_, v) in nodes where source.inRange(v) && !e.contains({$0 == v}) {
+            source.send(.flood, to: v)
+            let delay = 1.0 * Double(NSEC_PER_SEC)
+            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue()) {
+                self.flood(v, explored: e)
+            }
+            
+        }
+        self.edges += source.edges
     }
     
     func dijkstra(source:Node) {
@@ -51,7 +68,7 @@ class Graph {
             q.removeAtIndex(i)
             
             for (_, v) in nodes where u.inRange(v) {
-                let alt = dist[u.id]! + 1
+                let alt = dist[u.id]! + Double(Edge(u: u, v: v).length)
                 if alt < dist[v.id] {
                     dist[v.id] = alt
                     prev[v.id] = u
@@ -78,6 +95,9 @@ class Graph {
     
     func add(node: Node) {
         self.nodes[node.id] = node
+        
+        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.updateSelectors(node)
     }
 
 }

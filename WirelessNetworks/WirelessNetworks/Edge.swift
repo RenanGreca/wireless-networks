@@ -14,22 +14,29 @@ class Edge {
     let v:Node
     let w:Int
     
-    let line:SKShapeNode
+    let line = SKShapeNode()
     
     init(u:Node, v:Node) {
         self.u = u
         self.v = v
         self.w = 1
         
-        self.line = SKShapeNode()
         line.lineWidth = 10
 //        line.fillColor = SKColor.greenColor()
         
         let path = CGPathCreateMutable()
         CGPathMoveToPoint(path, nil, u.position.x, u.position.y)
         CGPathAddLineToPoint(path, nil, v.position.x, v.position.y)
-        self.line.path = path
+        line.path = path
+        line.zPosition = 35
 
+    }
+    
+    var length: CGFloat {
+        let x = self.u.position.x - self.v.position.x
+        let y = self.u.position.y - self.v.position.y
+        let z = x*x + y*y
+        return sqrt(z)
     }
     
     func equals(another: Edge) -> Bool {

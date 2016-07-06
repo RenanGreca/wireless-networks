@@ -9,6 +9,11 @@
 import Foundation
 import SpriteKit
 
+enum Message {
+    case flood;
+    case reply;
+}
+
 class Node: Equatable {
     let id:String
     var position:CGPoint
@@ -20,6 +25,9 @@ class Node: Equatable {
     var dist = [String: Double]()
     var prev = [String: Node]()
     
+//    var neighbors = [String: Node]()
+    var edges = [Edge]()
+    
     init(x: CGFloat, y: CGFloat, label:String, range:CGFloat?) {
         self.id = label
         if let r = range {
@@ -28,16 +36,22 @@ class Node: Equatable {
             self.range = 150
         }
         
-        circle = SKShapeNode(circleOfRadius: 10) //SKSpriteNode(imageNamed: "network_wireless")
+        circle = SKShapeNode(circleOfRadius: 15) //SKSpriteNode(imageNamed: "network_wireless")
         circle.fillColor = SKColor.blueColor()
+//        circle.strokeColor = SKColor.blackColor()
         circle.name = "circle:\(label)"
+        circle.zPosition = 45
+        
         rangeCircle = SKShapeNode(circleOfRadius: self.range)
         rangeCircle.fillColor = SKColor.blueColor()
         rangeCircle.alpha = 0.2
+        rangeCircle.zPosition = 30
 
         text = SKLabelNode(text: label)
         text.fontName = "San Francisco"
-        text.fontColor = SKColor.blackColor()
+        text.fontSize = 20
+        text.fontColor = SKColor.whiteColor()
+        text.zPosition = 50
             
 //             Text(string: label, fontSize: 32.0, fontName: "San Francisco", color: .black)
         
@@ -51,7 +65,7 @@ class Node: Equatable {
     func update() {
         circle.position = position
         rangeCircle.position = position
-        text.position = position
+        text.position = CGPoint(x:position.x, y:position.y-7)
     }
     
     func inRange(node:Node) -> Bool {
@@ -78,6 +92,28 @@ class Node: Equatable {
         
     func equals(another: Node) -> Bool {
         return self.id == another.id
+    }
+    
+    
+    // Routing simulation functions
+    
+    func send(message: Message, to: Node) {
+        to.receive(message, from: self)
+    }
+    
+    func receive(message: Message, from: Node) {
+        switch message {
+        case .flood:
+            // continue flooding algorithm
+//            self.neighbors[from.id] = from
+//            self.edges += [Edge(u: self, v: from)]
+            self.send(.reply, to: from)
+            break
+        case .reply:
+//            self.neighbors[from.id] = from
+            let e = Edge(u: self, v: from)
+            self.edges += [e]
+        }
     }
     
 }
