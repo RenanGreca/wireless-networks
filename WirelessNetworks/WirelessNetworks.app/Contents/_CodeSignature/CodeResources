@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>files</key>
+	<dict>
+		<key>Resources/Assets.car</key>
+		<data>
+		lie88QkfvaO19m6tpxMJOFK58Pc=
+		</data>
+		<key>Resources/Base.lproj/MainMenu.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yJR9tXOAVA9THlhhubKjxTd1RS4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/GameScene.sks</key>
+		<data>
+		NX8dNOTJ0yHUs8UoiUSkgps+phg=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Manifest.plist</key>
+		<data>
+		m4DxF9DR3SW6WIzgeciY74zU+3k=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Animate.playgroundpage/Contents.swift</key>
+		<data>
+		jqN/T8kjhS7/ZDkF+3OkE+3kQos=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Animate.playgroundpage/Manifest.plist</key>
+		<data>
+		H7gIZ+ElHS7EAOAgrv4Nt/uv8P0=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Animate.playgroundpage/Resources/LiveViewPoster.png</key>
+		<data>
+		MKAH5AgI9a08CKPwNKAa88AReos=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Canvas.playgroundpage/Contents.swift</key>
+		<data>
+		ibsX1rQLb3+bmzSgHuNC5TleC0Q=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Canvas.playgroundpage/Manifest.plist</key>
+		<data>
+		LPFlmhqz10Li74vdg69junerQlw=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Canvas.playgroundpage/Resources/LiveViewPoster.png</key>
+		<data>
+		MKAH5AgI9a08CKPwNKAa88AReos=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Create.playgroundpage/Contents.swift</key>
+		<data>
+		XXqaXsKEL9OGMVcOklHBoN2jNNE=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Create.playgroundpage/Manifest.plist</key>
+		<data>
+		Bx+JkR0DTPkEBcZsqdkWOaxiIVs=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Create.playgroundpage/Resources/LiveViewPoster.png</key>
+		<data>
+		MKAH5AgI9a08CKPwNKAa88AReos=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Touch.playgroundpage/Contents.swift</key>
+		<data>
+		Zl1NLYjKdHaoXL0IH1a6Tia09yg=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Touch.playgroundpage/Manifest.plist</key>
+		<data>
+		6Nkzd855D4HwGeQPBsF3qLL9arw=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Touch.playgroundpage/Resources/LiveViewPoster.png</key>
+		<data>
+		MKAH5AgI9a08CKPwNKAa88AReos=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Manifest.plist</key>
+		<data>
+		U5HPik17pi4q7JAZZH6EzODtroA=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Resources/Shapes.png</key>
+		<data>
+		fUPXkRorh3Yy8qYwAKs0xTLIWxs=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Resources/SwiftBird.png</key>
+		<data>
+		IPX+nYPb6edHwJgs+O34fnFkgJ4=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/AbstractDrawable.swift</key>
+		<data>
+		2TF0S+Si6U+oLeX3pUVeRfSjMUM=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/AbstractShape.swift</key>
+		<data>
+		cw68YurIsbgyew6LlAN6GN0PdRc=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Canvas.swift</key>
+		<data>
+		Sjyi105+8XBmbHoqYS+CSEhOw7c=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Circle.swift</key>
+		<data>
+		xJrwCInj061znQuZN6zDWr0eRJ8=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Color.swift</key>
+		<data>
+		y2JGXX3DXcu2srTfC633qT2NLAY=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Grid.swift</key>
+		<data>
+		ImbtbgiunWdguhEyxTPy3DGHJso=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Image.swift</key>
+		<data>
+		Af7Gp0s7Y8uqq57upPanCjemR04=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Line.swift</key>
+		<data>
+		08Ncidys9AdlQMmX97JmhX9B3IU=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Point.swift</key>
+		<data>
+		kD93ZitoUzsloaYveY52J+i6Iw4=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Rectangle.swift</key>
+		<data>
+		mRF3Bt+Q6a5QT7JorgGPvmzg2wU=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Shadow.swift</key>
+		<data>
+		WstYfzHF6tc+wLnyrwIMLM27HLA=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Size.swift</key>
+		<data>
+		m2gFcO2sKf9UwbOde17Cgfr6QXs=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Text.swift</key>
+		<data>
+		4aiw1aGxMHJLBPVFZ+7I2W5dZqE=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/TouchGestureRecognizer.swift</key>
+		<data>
+		sy+kh6qTe1mVHm1cqh5ucRXT2cs=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/Setup.swift</key>
+		<data>
+		c7SvtoFWybLFNMBzmMzxx0r/4QA=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Edits/UserEdits.diffpack/Chapters/Shapes.playgroundchapter/Pages/Canvas.playgroundpage/Contents.swift.delta</key>
+		<data>
+		2ob0mp/gqDWThzBGL2/PPMKQbgM=
+		</data>
+		<key>Resources/Wireless Network.playgroundbook/Edits/UserEdits.diffpack/Manifest.plist</key>
+		<data>
+		/zc4YZ8HwTbkq8nA/7llVwU5Ets=
+		</data>
+	</dict>
+	<key>files2</key>
+	<dict>
+		<key>Frameworks/libswiftAVFoundation.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			NDaEmUcVzZJogmp050G6FD/zqAQ=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"5a404861225cc2478daaa377462028b18fc12c7c" or cdhash H"343684994715cd9268826a74e741ba143ff3a804"</string>
+		</dict>
+		<key>Frameworks/libswiftAppKit.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			R4MJ/eg9eTJuhhOmpM9SLLLT9gk=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"22c943383c9d50fe926797f5860374cb7a186f6c" or cdhash H"478309fde83d79326e8613a6a4cf522cb2d3f609"</string>
+		</dict>
+		<key>Frameworks/libswiftCore.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			XEwVoALOUnReZA1kgH9Rq7xZonQ=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"9a56f793d75d4e1fcbdc226fdba48e20cb90c7e7" or cdhash H"5c4c15a002ce52745e640d64807f51abbc59a274"</string>
+		</dict>
+		<key>Frameworks/libswiftCoreAudio.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			LiYYXfNHv1Plz2l2Dk0PCd1UHOM=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"476a06a2bd22114633ef0b8b19d7761dfbd4404d" or cdhash H"2e26185df347bf53e5cf69760e4d0f09dd541ce3"</string>
+		</dict>
+		<key>Frameworks/libswiftCoreData.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			ofpfgFhgJP4dLXJdq4SncsB7rFA=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"9fe78add8979e38fed8b2ffcb745289f2688095c" or cdhash H"a1fa5f80586024fe1d2d725dab84a772c07bac50"</string>
+		</dict>
+		<key>Frameworks/libswiftCoreGraphics.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			HwFh2o9wMswc+jCz/+7sMq4yr7k=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"02512826b2ed3ac7d05a4bb0046af50ed12eb12d" or cdhash H"1f0161da8f7032cc1cfa30b3ffeeec32ae32afb9"</string>
+		</dict>
+		<key>Frameworks/libswiftCoreImage.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			Qyy36JFs+ZPzu5R0cw8LBLlnSPc=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"f61813731ed1780a5be5dce9367508a45933cf31" or cdhash H"432cb7e8916cf993f3bb9474730f0b04b96748f7"</string>
+		</dict>
+		<key>Frameworks/libswiftCoreMedia.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			t6/Pkf4/FgGj0qhY3SkB8wJsQxw=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"3deb0b2e17abb59f74f613c33a0d0282b73fffae" or cdhash H"b7afcf91fe3f1601a3d2a858dd2901f3026c431c"</string>
+		</dict>
+		<key>Frameworks/libswiftDarwin.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			NzY+aTQlHHr9qdJ4oSlLiQmzH4s=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"587cf1195f78078adf9930ff665b1d3bb68ccbd2" or cdhash H"37363e6934251c7afda9d278a1294b8909b31f8b"</string>
+		</dict>
+		<key>Frameworks/libswiftDispatch.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			36KNS9/IVntPdmKcRZIYBbR5Ruo=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"a23e22d52f88e3b327158dc2e2d4b034ad56970c" or cdhash H"dfa28d4bdfc8567b4f76629c45921805b47946ea"</string>
+		</dict>
+		<key>Frameworks/libswiftFoundation.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			3zZffKNMFvcAwjXh8EVgnKaQirM=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"8e1165cc3f640fb63bb3e52f274267bcd1f1a617" or cdhash H"df365f7ca34c16f700c235e1f045609ca6908ab3"</string>
+		</dict>
+		<key>Frameworks/libswiftGLKit.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			RpRmbUhwSiv6F8huYp/RFghuGnw=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"56733d7c1857a373b9f7b446d88f9f59d1b2d45a" or cdhash H"4694666d48704a2bfa17c86e629fd116086e1a7c"</string>
+		</dict>
+		<key>Frameworks/libswiftIOKit.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			+Ai1PqDoEdjZDcgXf2GpixFUu9Y=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"f2481cd38d2f7abeb427dbca28d78742f8fcd0c8" or cdhash H"f808b53ea0e811d8d90dc8177f61a98b1154bbd6"</string>
+		</dict>
+		<key>Frameworks/libswiftObjectiveC.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			VlzJlLZUdZ6O/J7k8jGw7LIgse4=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"439a83bf276258c66c73ee91368f53073b4898eb" or cdhash H"565cc994b654759e8efc9ee4f231b0ecb220b1ee"</string>
+		</dict>
+		<key>Frameworks/libswiftSpriteKit.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			Y7BdSDtR0XL/mFITn1yBrhfHsCo=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"31d965b498096db050757420057d066c2e67f574" or cdhash H"63b05d483b51d172ff9852139f5c81ae17c7b02a"</string>
+		</dict>
+		<key>Frameworks/libswiftsimd.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			3nZfQh2Ma/qFGkLZ7uHMjNzTdDY=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"2d93ee87cad9b50c8e6dd96aa83598473760f84b" or cdhash H"de765f421d8c6bfa851a42d9eee1cc8cdcd37436"</string>
+		</dict>
+		<key>Resources/Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lie88QkfvaO19m6tpxMJOFK58Pc=
+			</data>
+			<key>hash2</key>
+			<data>
+			mfTMT/iWdcK0nLYT6FNUX7dxCEdXLWVzHAoBpyP+n+I=
+			</data>
+		</dict>
+		<key>Resources/Base.lproj/MainMenu.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yJR9tXOAVA9THlhhubKjxTd1RS4=
+			</data>
+			<key>hash2</key>
+			<data>
+			u7AHMm7lyXqOffKbMkl5PZBxZx7h1m6jocG6ywicRs8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/GameScene.sks</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NX8dNOTJ0yHUs8UoiUSkgps+phg=
+			</data>
+			<key>hash2</key>
+			<data>
+			V7VzaBF+jAtfjn63GhAo7mmyX8CTIxkKOJd+IqozM98=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Manifest.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			m4DxF9DR3SW6WIzgeciY74zU+3k=
+			</data>
+			<key>hash2</key>
+			<data>
+			PNkv9FPf7U0PtpS2M9ymJcSpZXxX2RPufbBwaQsEtUQ=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Animate.playgroundpage/Contents.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jqN/T8kjhS7/ZDkF+3OkE+3kQos=
+			</data>
+			<key>hash2</key>
+			<data>
+			NHsC194nD4D4UohIox1oD37YnjyG1PtGwLHX7nCbDsk=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Animate.playgroundpage/Manifest.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			H7gIZ+ElHS7EAOAgrv4Nt/uv8P0=
+			</data>
+			<key>hash2</key>
+			<data>
+			fsU4wrkaESnOPqUuxW8fFOXyZ2S4/ndaZDKwGzENn/U=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Animate.playgroundpage/Resources/LiveViewPoster.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MKAH5AgI9a08CKPwNKAa88AReos=
+			</data>
+			<key>hash2</key>
+			<data>
+			mjfJXsmh1mHCbCZzx3lK+K0ajiTctBlmZNpkBMd5gEU=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Canvas.playgroundpage/Contents.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ibsX1rQLb3+bmzSgHuNC5TleC0Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			XuS6x+/MlHOqF834rOHCtsUNrurJXI5AvtVjSuNyjQI=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Canvas.playgroundpage/Manifest.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			LPFlmhqz10Li74vdg69junerQlw=
+			</data>
+			<key>hash2</key>
+			<data>
+			XfiMXbVMGpbmUjvS5OSRx/+Nmr4Vg3bdjMSyxCAphOQ=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Canvas.playgroundpage/Resources/LiveViewPoster.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MKAH5AgI9a08CKPwNKAa88AReos=
+			</data>
+			<key>hash2</key>
+			<data>
+			mjfJXsmh1mHCbCZzx3lK+K0ajiTctBlmZNpkBMd5gEU=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Create.playgroundpage/Contents.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			XXqaXsKEL9OGMVcOklHBoN2jNNE=
+			</data>
+			<key>hash2</key>
+			<data>
+			Moz2lv7DnUJwY7TYtyanHpuPGMYjsid7S+/7TWzg75E=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Create.playgroundpage/Manifest.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Bx+JkR0DTPkEBcZsqdkWOaxiIVs=
+			</data>
+			<key>hash2</key>
+			<data>
+			ja6khRRYj3qxNA+kIWg0208xUv6z7kZRBTY6nRJ7zrs=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Create.playgroundpage/Resources/LiveViewPoster.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MKAH5AgI9a08CKPwNKAa88AReos=
+			</data>
+			<key>hash2</key>
+			<data>
+			mjfJXsmh1mHCbCZzx3lK+K0ajiTctBlmZNpkBMd5gEU=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Touch.playgroundpage/Contents.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Zl1NLYjKdHaoXL0IH1a6Tia09yg=
+			</data>
+			<key>hash2</key>
+			<data>
+			8nHAo0r2kc59CNNgTW5M37/AVskYR8LUgREAqJaejMo=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Touch.playgroundpage/Manifest.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6Nkzd855D4HwGeQPBsF3qLL9arw=
+			</data>
+			<key>hash2</key>
+			<data>
+			erhwnxO7H55okPMJoO9wouiZj4dY+plDBJlYaQ8FJ9o=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Chapters/Shapes.playgroundchapter/Pages/Touch.playgroundpage/Resources/LiveViewPoster.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MKAH5AgI9a08CKPwNKAa88AReos=
+			</data>
+			<key>hash2</key>
+			<data>
+			mjfJXsmh1mHCbCZzx3lK+K0ajiTctBlmZNpkBMd5gEU=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Manifest.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			U5HPik17pi4q7JAZZH6EzODtroA=
+			</data>
+			<key>hash2</key>
+			<data>
+			msiFlcUSiixT8ANmwUwvNq5IKTkIKhPqm/qfN3Ki6bs=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Resources/Shapes.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fUPXkRorh3Yy8qYwAKs0xTLIWxs=
+			</data>
+			<key>hash2</key>
+			<data>
+			iTjqEN9/dGyhUaPeQGD4p9N05IY4IHtN5Gbryu/iHk8=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Resources/SwiftBird.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IPX+nYPb6edHwJgs+O34fnFkgJ4=
+			</data>
+			<key>hash2</key>
+			<data>
+			WQzn2FCtlTP9TApSvGkwQk5y4TaN24Q2Dg2CYdmZ4rQ=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/AbstractDrawable.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2TF0S+Si6U+oLeX3pUVeRfSjMUM=
+			</data>
+			<key>hash2</key>
+			<data>
+			s1lWJFjJeNvlEbEPBHcYigewT+MMrybS5E60BYyg/8M=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/AbstractShape.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cw68YurIsbgyew6LlAN6GN0PdRc=
+			</data>
+			<key>hash2</key>
+			<data>
+			CN6zalagrEu9LO5TKMPTxGWX3bWK9bNOtEICHuSMY2c=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Canvas.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Sjyi105+8XBmbHoqYS+CSEhOw7c=
+			</data>
+			<key>hash2</key>
+			<data>
+			2CQc9JCCqXJTE0sXaMLQDsUNz+/T3V0j9t26cmDqZOE=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Circle.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			xJrwCInj061znQuZN6zDWr0eRJ8=
+			</data>
+			<key>hash2</key>
+			<data>
+			HXdn5vPyaJWYdfkyQGHJLj7+GCR9JTMkwimXnLN7xcE=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Color.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			y2JGXX3DXcu2srTfC633qT2NLAY=
+			</data>
+			<key>hash2</key>
+			<data>
+			JXaALETXkL4qUeKyI8gXkdDh9UbKtIk46K5oddCFJ70=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Grid.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ImbtbgiunWdguhEyxTPy3DGHJso=
+			</data>
+			<key>hash2</key>
+			<data>
+			xPhqD0SRvoLGB3aZqsPVwIUG15k2HCAV82vZhubrSM0=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Image.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Af7Gp0s7Y8uqq57upPanCjemR04=
+			</data>
+			<key>hash2</key>
+			<data>
+			XR3nXVSO328++emeBn8t/Tw5mtNrMwhmV9l3BsOhY80=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Line.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			08Ncidys9AdlQMmX97JmhX9B3IU=
+			</data>
+			<key>hash2</key>
+			<data>
+			dNWuRdHEv5qlXbgUSK3QiVzR9LS7029N9jN5+yXatLw=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Point.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			kD93ZitoUzsloaYveY52J+i6Iw4=
+			</data>
+			<key>hash2</key>
+			<data>
+			mMPeFD5KN4n/mTRWeB0VwdCr2cwivJSr4m3Cs3CE59Q=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Rectangle.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			mRF3Bt+Q6a5QT7JorgGPvmzg2wU=
+			</data>
+			<key>hash2</key>
+			<data>
+			GtCcrRuqRyYviTuVgxfZW2gYZlixssMfxClQ40tP54g=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Shadow.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WstYfzHF6tc+wLnyrwIMLM27HLA=
+			</data>
+			<key>hash2</key>
+			<data>
+			KXdjSMji9QcBfBaPuQss0ARaxUIK/r5EyxJbgGgRxIY=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Size.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			m2gFcO2sKf9UwbOde17Cgfr6QXs=
+			</data>
+			<key>hash2</key>
+			<data>
+			OGpXWrGYUvWWmtPNe9OyGULVJoyWDjE6EY2Q2eGFs74=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/Text.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4aiw1aGxMHJLBPVFZ+7I2W5dZqE=
+			</data>
+			<key>hash2</key>
+			<data>
+			KdJJHDE6GT7EY8YnrkXOAQa9k7Jg6xCnA1ZZK90RuOc=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/PlaygroundAPI/TouchGestureRecognizer.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sy+kh6qTe1mVHm1cqh5ucRXT2cs=
+			</data>
+			<key>hash2</key>
+			<data>
+			ihrncGNrTPi7SQ9JlL9VbBH3N8in56lq8zMDdswjmZo=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Contents/Sources/Setup.swift</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			c7SvtoFWybLFNMBzmMzxx0r/4QA=
+			</data>
+			<key>hash2</key>
+			<data>
+			3MaVc0IVZDLXPZYOyyjUcEGOud7pKbIQx2YOMmS+64M=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Edits/UserEdits.diffpack/Chapters/Shapes.playgroundchapter/Pages/Canvas.playgroundpage/Contents.swift.delta</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2ob0mp/gqDWThzBGL2/PPMKQbgM=
+			</data>
+			<key>hash2</key>
+			<data>
+			/n7i76LPIBvSJ907dZk6bOwl25CDz23KbxkaPMlul0k=
+			</data>
+		</dict>
+		<key>Resources/Wireless Network.playgroundbook/Edits/UserEdits.diffpack/Manifest.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/zc4YZ8HwTbkq8nA/7llVwU5Ets=
+			</data>
+			<key>hash2</key>
+			<data>
+			KEA4cqqQOFpJVaptgxq1CQipJATJILEj2HJa/pyFS+A=
+			</data>
+		</dict>
+	</dict>
+	<key>rules</key>
+	<dict>
+		<key>^Resources/</key>
+		<true/>
+		<key>^Resources/.*\.lproj/</key>
+		<dict>
+			<key>optional</key>
+			<true/>
+			<key>weight</key>
+			<real>1000</real>
+		</dict>
+		<key>^Resources/.*\.lproj/locversion.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>1100</real>
+		</dict>
+		<key>^version.plist$</key>
+		<true/>
+	</dict>
+	<key>rules2</key>
+	<dict>
+		<key>.*\.dSYM($|/)</key>
+		<dict>
+			<key>weight</key>
+			<real>11</real>
+		</dict>
+		<key>^(.*/)?\.DS_Store$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>2000</real>
+		</dict>
+		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
+		<dict>
+			<key>nested</key>
+			<true/>
+			<key>weight</key>
+			<real>10</real>
+		</dict>
+		<key>^.*</key>
+		<true/>
+		<key>^Info\.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^PkgInfo$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^Resources/</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^Resources/.*\.lproj/</key>
+		<dict>
+			<key>optional</key>
+			<true/>
+			<key>weight</key>
+			<real>1000</real>
+		</dict>
+		<key>^Resources/.*\.lproj/locversion.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>1100</real>
+		</dict>
+		<key>^[^/]+$</key>
+		<dict>
+			<key>nested</key>
+			<true/>
+			<key>weight</key>
+			<real>10</real>
+		</dict>
+		<key>^embedded\.provisionprofile$</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^version\.plist$</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -16,13 +16,19 @@ class GameScene: SKScene {
     var pathLines:[SKShapeNode] = []
     
     var calculatingDijkstra = false
+    var flooding = false
+    
     var from: Node?
     var to: Node?
     
     override func didMoveToView(view: SKView) {
-        graph = Graph(nodes: createNodes(10))
+        graph = Graph()
+        self.createNodes(10)
     }
     
+    // Gets click event
+    // If a node is clicked, drag it
+    // Else, create a new one
     override func mouseDown(theEvent: NSEvent) {
         let location = theEvent.locationInNode(self)
         
@@ -32,7 +38,7 @@ class GameScene: SKScene {
                     
                     let name = n.characters.split {$0 == ":"}.map { String($0) }
                     if name[0] == "circle" {
-                        self.selectedNode = graph!.nodes[name[1]]
+                        self.selectedNode = graph!.nodes[Int(name[1])!]
                     }
                 }
             }
@@ -41,19 +47,20 @@ class GameScene: SKScene {
         if let _ = self.selectedNode {
         } else {
             
-            let node = Node(x: location.x, y: location.y, label: "\(graph!.nodes.count)", range: nil)
-
+            let node = Node(x: location.x, y: location.y, label: graph!.nodes.count, range: nil)
+            
             graph!.add(node)
             node.addToScene(self)
             
-            //self.circle = circle
             self.selectedNode = node
         }
 
     }
     
+    // Gets drag event
     override func mouseDragged(theEvent: NSEvent) {
         let location = theEvent.locationInNode(self)
+        self.flooding = false
         
         if let node = self.selectedNode {
             node.position = location
@@ -62,10 +69,12 @@ class GameScene: SKScene {
 
     }
     
+    // Gets click release event
     override func mouseUp(theEvent: NSEvent) {
         self.selectedNode = nil
     }
     
+    // 60 frames per second
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
@@ -73,7 +82,9 @@ class GameScene: SKScene {
         self.lines = []
         self.drawEdges(self.graph!.edges)
         
-//        self.graph?.findEdges()
+        if !flooding {
+            self.graph?.findEdges()
+        }
         
         if self.calculatingDijkstra {
             self.graph!.dijkstra(from!)
@@ -82,8 +93,9 @@ class GameScene: SKScene {
         }
     }
     
-    func createNodes(n: Int) -> [String: Node] {
-        var nodes = [String: Node]()
+    // Creates n nodes with random positions
+    func createNodes(n: Int) -> [Int: Node] {
+        var nodes = [Int: Node]()
         let xRange = 0..<Int(self.frame.width)
         let yRange = 0..<Int(self.frame.height)
         
@@ -91,9 +103,10 @@ class GameScene: SKScene {
             let x = CGFloat(Int.random(xRange))
             let y = CGFloat(Int.random(yRange))
             
-            let node = Node(x:x, y:y, label: "\(i)", range:nil)
-            nodes["\(i)"] = node
+            let node = Node(x:x, y:y, label: i, range:nil)
+            nodes[i] = node
             
+            self.graph?.add(node)
             node.addToScene(self)
         }
         
@@ -114,8 +127,7 @@ class GameScene: SKScene {
         self.lines = [SKShapeNode]()
     }
     
-    
-    
+    // Draws a path between two nodes; usually used to show dijkstra results
     func drawPath(from: Node, to: Node) {
         self.pathLines = []
         

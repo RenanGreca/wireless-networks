@@ -11,7 +11,7 @@ import Cocoa
 import SpriteKit
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource {
     
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var skView: SKView!
@@ -20,20 +20,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var dTo: NSTextField!
     @IBOutlet weak var btnGo: NSButton!
     
-//    @IBOutlet weak var sFrom: NSPopUpButton!
-//    @IBOutlet weak var sTo: NSPopUpButton!
+    @IBOutlet weak var fSource: NSTextField!
+    @IBOutlet weak var chkFloodFast: NSButton!
+    
+    @IBOutlet weak var tableView: NSTableView!
     
     var scene:GameScene?
+    var sourceNode:Node?
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        tableView.setDelegate(self)
+        tableView.setDataSource(self)
+        
         /* Pick a size for the scene */
         if let scene = GameScene(fileNamed:"GameScene") {
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
             
             self.skView!.presentScene(scene)
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
             self.skView!.ignoresSiblingOrder = true
             
             self.skView!.showsFPS = true
@@ -41,16 +45,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             self.scene = scene
             
-//            sFrom.addItemsWithTitles([String](scene.graph!.nodes.keys))
-//            sTo.addItemsWithTitles([String](scene.graph!.nodes.keys))
         }
     }
     
+    // Calculates dijkstra path for two nodes
     @IBAction func calculateDijkstra(sender: AnyObject) {
         guard self.scene != nil else { print("No GameScene"); return }
         
-        let idFrom = self.dFrom.stringValue
-        let idTo = self.dTo.stringValue
+        let idFrom = Int(self.dFrom.stringValue)!
+        let idTo = Int(self.dTo.stringValue)!
         
         if let from = scene!.graph?.nodes[idFrom], to = scene!.graph?.nodes[idTo] {
             scene?.calculateDijkstra(from, to: to)
@@ -59,19 +62,64 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    // Sends flood signal for certain node
     @IBAction func flood(sender: AnyObject) {
         guard self.scene != nil else { print("No GameScene"); return }
         
-        self.scene?.graph?.edges = [Edge]()
-        self.scene?.graph?.flood(scene!.graph!.nodes["0"]!, explored:[])
-    }
-    
-    func updateSelectors(node: Node) {
-//        sFrom.addItemWithTitle(node.id)
-//        sTo.addItemWithTitle(node.id)
+        let idSource = Int(self.fSource.stringValue)!
+        
+        if let source = scene!.graph?.nodes[idSource] {
+            self.scene?.flooding = true
+            source.flood()
+            print(source.routes)
+            self.sourceNode = source
+            self.tableView.reloadData()
+        } else {
+            print("Incorrect node IDs")
+        }
+        
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
         return true
     }
+    
+    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+        if let node = sourceNode {
+            print(node.routes.count)
+            return node.routes.count
+        } else {
+            return 0
+        }
+    }
+    
+    // Fills tableView
+    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
+        var text:String = ""
+        
+        guard let _ = sourceNode else {
+            return nil
+        }
+        
+        let key = Array(sourceNode!.routes.keys).sort()[row]
+        
+        if let route = sourceNode!.routes[key] {
+        
+            // Node ID
+            if tableColumn == tableView.tableColumns[0] {
+                text = "\(key)"
+            // Next Node
+            } else if tableColumn == tableView.tableColumns[1] {
+                text = "\(route.0)"
+            // Distance
+            } else if tableColumn == tableView.tableColumns[2] {
+                text = "\(route.1)"
+            }
+            
+        }
+        
+        return text
+    }
+    
+
 }

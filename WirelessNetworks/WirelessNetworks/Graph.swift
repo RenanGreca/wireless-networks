@@ -10,11 +10,11 @@ import Foundation
 import Cocoa
 
 class Graph {
-    var nodes:[String: Node]
+    var nodes:[Int: Node]
     var edges:[Edge]
     
-    init(nodes:[String: Node]) {
-        self.nodes = nodes
+    init() {
+        self.nodes = [:]
         self.edges = []
     }
     
@@ -33,26 +33,10 @@ class Graph {
         }
     }
     
-    func flood(source: Node, explored: [Node]) {
-        let e = explored+[source]
-        source.edges = []
-        for (_, v) in nodes where source.inRange(v) && !e.contains({$0 == v}) {
-            source.send(.flood, to: v)
-            let delay = 1.0 * Double(NSEC_PER_SEC)
-            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-            dispatch_after(time, dispatch_get_main_queue()) {
-                self.flood(v, explored: e)
-            }
-            
-        }
-        self.edges += source.edges
-    }
-    
     func dijkstra(source:Node) {
         var q = [Node]()
-        var dist = [String: Double]()
-        var prev = [String: Node]()
-        var path = [Node]()
+        var dist = [Int: Double]()
+        var prev = [Int: Node]()
         
         for (i, v) in self.nodes {
             dist[i] = Double.infinity
@@ -81,7 +65,7 @@ class Graph {
         
     }
     
-    private func minDist(q:[Node], dist:[String: Double]) -> Int {
+    private func minDist(q:[Node], dist:[Int: Double]) -> Int {
         var m = Double.infinity
         var index:Int = 0
         for (i, n) in q.enumerate() {
@@ -95,9 +79,6 @@ class Graph {
     
     func add(node: Node) {
         self.nodes[node.id] = node
-        
-        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.updateSelectors(node)
+        node.graph = self
     }
-
 }

@@ -22,7 +22,6 @@ class Edge {
         self.w = 1
         
         line.lineWidth = 10
-//        line.fillColor = SKColor.greenColor()
         
         let path = CGPathCreateMutable()
         CGPathMoveToPoint(path, nil, u.position.x, u.position.y)
