@@ -6,17 +6,12 @@
 	<dict>
 		<key>Resources/Assets.car</key>
 		<data>
-		lie88QkfvaO19m6tpxMJOFK58Pc=
+		/PUgywBo1IghH00Tl4mWozeX0y8=
 		</data>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			yJR9tXOAVA9THlhhubKjxTd1RS4=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
+		<data>
+		Zo8Ely3ew79Cv7tx9cW84nlNX1U=
+		</data>
 		<key>Resources/GameScene.sks</key>
 		<data>
 		NX8dNOTJ0yHUs8UoiUSkgps+phg=
@@ -304,25 +299,23 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lie88QkfvaO19m6tpxMJOFK58Pc=
+			/PUgywBo1IghH00Tl4mWozeX0y8=
 			</data>
 			<key>hash2</key>
 			<data>
-			mfTMT/iWdcK0nLYT6FNUX7dxCEdXLWVzHAoBpyP+n+I=
+			QY3RM10QwmccaFy99/0j24+nZnUwV4P9wCA/blBikU8=
 			</data>
 		</dict>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yJR9tXOAVA9THlhhubKjxTd1RS4=
+			Zo8Ely3ew79Cv7tx9cW84nlNX1U=
 			</data>
 			<key>hash2</key>
 			<data>
-			u7AHMm7lyXqOffKbMkl5PZBxZx7h1m6jocG6ywicRs8=
+			e5RJvEI52IgMxuZ4J0iPkhCgkDKMeZw5INOIoOYb+m4=
 			</data>
-			<key>optional</key>
-			<true/>
 		</dict>
 		<key>Resources/GameScene.sks</key>
 		<dict>
@@ -717,6 +710,11 @@
 			<key>weight</key>
 			<real>1100</real>
 		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
+		</dict>
 		<key>^version.plist$</key>
 		<true/>
 	</dict>
@@ -775,6 +773,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^[^/]+$</key>
 		<dict>

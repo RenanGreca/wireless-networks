@@ -19,16 +19,20 @@ class Edge {
     init(u:Node, v:Node) {
         self.u = u
         self.v = v
-        self.w = 1
+        // The connection width is the lesser of the two bandwidths
+        self.w = min(u.bandwidth, v.bandwidth)
         
-        line.lineWidth = 10
-        
+        line.lineWidth = CGFloat(w*2)
+        self.update()
+
+    }
+    
+    func update() {
         let path = CGPathCreateMutable()
         CGPathMoveToPoint(path, nil, u.position.x, u.position.y)
         CGPathAddLineToPoint(path, nil, v.position.x, v.position.y)
         line.path = path
         line.zPosition = 35
-
     }
     
     var length: CGFloat {
@@ -40,6 +44,16 @@ class Edge {
     
     func equals(another: Edge) -> Bool {
         return (self.u == another.u && self.v == another.v) || (self.u == another.v && self.v == another.u)
+    }
+    
+    func exists(inArray: [Edge]) -> Bool {
+        for e in inArray {
+            if (self.v == e.v && self.u == e.u) ||
+                (self.v == e.u && self.u == e.v) {
+                return true
+            }
+        }
+        return false
     }
     
 }

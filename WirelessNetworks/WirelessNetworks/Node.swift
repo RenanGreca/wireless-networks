@@ -18,6 +18,7 @@ class Node: Equatable {
     let id:Int
     var position:CGPoint
     let range:CGFloat
+    let bandwidth:Int
     let circle:SKShapeNode
     let rangeCircle:SKShapeNode
     let text:SKLabelNode
@@ -51,6 +52,10 @@ class Node: Equatable {
         text.fontSize = 20
         text.fontColor = SKColor.whiteColor()
         text.zPosition = 50
+        
+        bandwidth = Int.random(1..<11)
+        
+        print("Node \(label) has bandwidth \(bandwidth)")
         
         position = CGPoint(x: x, y: y)
         self.update()
@@ -88,7 +93,7 @@ class Node: Equatable {
     
     // Routing simulation functions
     var flooding = false
-    var routes = [Int: (Int, CGFloat)]()
+    var routes = [Int: (Int, CGFloat, Double)]()
 
     func flood() {
         if self.flooding {
@@ -96,24 +101,25 @@ class Node: Equatable {
         }
         
         self.flooding = true
-        self.routes = [self.id:(self.id, 0)]
+        self.routes = [self.id:(self.id, 0, Double.infinity)]
         
         for (_, v) in self.graph!.nodes where self.inRange(v) && v != self {
             
             let vWeight = self.euclidianDistance(v.position) //CGFloat(1.0)
+            let vWidth = Double(min(self.bandwidth, v.bandwidth))
             v.flood()
             
-            self.routes[v.id] = (v.id, vWeight)
+            self.routes[v.id] = (v.id, vWeight, vWidth)
             
-            for (node, (_, weight)) in v.routes {
+            for (node, (_, weight, width)) in v.routes {
                 let w = weight+vWeight
                 
                 if let n = self.routes[node] {
                     if n.1 > w {
-                        self.routes[node] = (v.id, w)
+                        self.routes[node] = (v.id, w, width)
                     }
                 } else {
-                    self.routes[node] = (v.id, w)
+                    self.routes[node] = (v.id, w, width)
                 }
             }
             

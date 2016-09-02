@@ -16,7 +16,9 @@ class GameScene: SKScene {
     var pathLines:[SKShapeNode] = []
     
     var calculatingDijkstra = false
+    var modeDijkstra:DijkstraMode = .latency
     var flooding = false
+    var source:Node?
     
     var from: Node?
     var to: Node?
@@ -60,7 +62,7 @@ class GameScene: SKScene {
     // Gets drag event
     override func mouseDragged(theEvent: NSEvent) {
         let location = theEvent.locationInNode(self)
-        self.flooding = false
+//        self.flooding = false
         
         if let node = self.selectedNode {
             node.position = location
@@ -82,12 +84,19 @@ class GameScene: SKScene {
         self.lines = []
         self.drawEdges(self.graph!.edges)
         
-        if !flooding {
-            self.graph?.findEdges()
+        self.graph?.findEdges()
+        if flooding {
+            source!.flood()
+            let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.tableView.reloadData()
         }
         
         if self.calculatingDijkstra {
-            self.graph!.dijkstra(from!)
+            if self.modeDijkstra == .latency {
+                self.graph!.dijkstra(from!)
+            } else {
+                self.graph!.bandwidthDijkstra(from!)
+            }
             self.removeChildrenInArray(self.pathLines)
             drawPath(from!, to: to!)
         }
@@ -136,7 +145,7 @@ class GameScene: SKScene {
             var v = val
             while (v != from) {
                 let line = SKShapeNode()
-                line.lineWidth = 10
+                line.lineWidth = CGFloat(min(u.bandwidth, v.bandwidth)*2)
                 line.strokeColor = SKColor.yellowColor()
                 
                 let path = CGPathCreateMutable()
@@ -153,7 +162,7 @@ class GameScene: SKScene {
             }
             
             let line = SKShapeNode()
-            line.lineWidth = 10
+            line.lineWidth = CGFloat(min(u.bandwidth, v.bandwidth)*2)
             line.strokeColor = SKColor.yellowColor()
             
             let path = CGPathCreateMutable()
@@ -170,10 +179,11 @@ class GameScene: SKScene {
         }
     }
     
-    func calculateDijkstra(from: Node, to: Node) {
+    func calculateDijkstra(from: Node, to: Node, mode:DijkstraMode) {
         self.from = from
         self.to = to
         self.calculatingDijkstra = true
+        self.modeDijkstra = mode
     }
 
 }

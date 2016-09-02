@@ -20,7 +20,20 @@ class Graph {
     
     // God-mode find edges
     func findEdges() {
+        let oldEdges = self.edges
         self.edges = []
+        
+        // Check for already existing edges
+        for e in oldEdges {
+            if e.u.inRange(e.v) {
+                if !edges.contains({ $0 == e }) {
+                    self.edges += [e]
+                    e.update()
+                }
+            }
+        }
+        
+        // Check for new edges
         for (_, u) in nodes {
             for (_, v) in nodes where v != u {
                 if u.inRange(v) {
@@ -71,6 +84,50 @@ class Graph {
         for (i, n) in q.enumerate() {
             if dist[n.id] < m {
                 m = dist[n.id]!
+                index = i
+            }
+        }
+        return index
+    }
+    
+    func bandwidthDijkstra(source:Node) {
+        var q = [Node]()
+        var width = [Int: Double]()
+        var prev = [Int: Node]()
+        
+        for (i, v) in self.nodes {
+            width[i] = 0 //Double.infinity
+            prev[i] = nil
+            q += [v]
+        }
+        
+        width[source.id] = Double.infinity
+        
+        while q.count > 0 {
+            let i = maxWidth(q, width: width) // minDist(q, dist: dist)
+            let u = q[i]
+            q.removeAtIndex(i)
+            
+            for (_, v) in nodes where u.inRange(v) {
+                let alt = min(width[u.id]!, Double(Edge(u: u, v: v).w))
+                if alt > width[v.id] {
+                    width[v.id] = alt
+                    prev[v.id] = u
+                }
+            }
+        }
+        
+        source.dist = width
+        source.prev = prev
+        
+    }
+
+    private func maxWidth(q:[Node], width:[Int: Double]) -> Int {
+        var m:Double = 0
+        var index:Int = 0
+        for (i, n) in q.enumerate() {
+            if width[n.id] > m {
+                m = width[n.id]!
                 index = i
             }
         }
