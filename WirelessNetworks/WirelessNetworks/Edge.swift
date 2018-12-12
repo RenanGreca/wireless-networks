@@ -21,6 +21,7 @@ class Edge {
         self.v = v
         // The connection width is the lesser of the two bandwidths
         self.w = min(u.bandwidth, v.bandwidth)
+//        self.w = Int(self.length)
         
         line.lineWidth = CGFloat(w*2)
         self.update()
@@ -28,9 +29,11 @@ class Edge {
     }
     
     func update() {
-        let path = CGPathCreateMutable()
-        CGPathMoveToPoint(path, nil, u.position.x, u.position.y)
-        CGPathAddLineToPoint(path, nil, v.position.x, v.position.y)
+        let path = CGMutablePath()
+        path.move(to: u.position)
+//        CGPathMoveToPoint(path, nil, u.position.x, u.position.y)
+        path.addLine(to: v.position)
+//        CGPathAddLineToPoint(path, nil, v.position.x, v.position.y)
         line.path = path
         line.zPosition = 35
     }
@@ -59,5 +62,5 @@ class Edge {
 }
 
 func ==(lhs: Edge, rhs: Edge) -> Bool {
-    return lhs.equals(rhs)
+    return lhs.equals(another: rhs)
 }

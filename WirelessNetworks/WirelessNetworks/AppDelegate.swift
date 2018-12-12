@@ -36,14 +36,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDelegate, NSTable
     var scene:GameScene?
     var sourceNode:Node?
     
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        tableView.setDelegate(self)
-        tableView.setDataSource(self)
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        tableView.delegate = self
+        tableView.dataSource = self
         
         /* Pick a size for the scene */
         if let scene = GameScene(fileNamed:"GameScene") {
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
+            scene.scaleMode = .aspectFill
             
             self.skView!.presentScene(scene)
             self.skView!.ignoresSiblingOrder = true
@@ -56,37 +56,38 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDelegate, NSTable
     }
     
     // Calculates dijkstra path for two nodes
-    @IBAction func calculateDijkstra(sender: AnyObject) {
+    @IBAction func calculateDijkstra(_ sender: Any) {
         guard self.scene != nil else { print("No GameScene"); return }
         
         let idFrom = Int(self.dFrom.stringValue)!
         let idTo = Int(self.dTo.stringValue)!
         
-        if let from = scene!.graph?.nodes[idFrom], to = scene!.graph?.nodes[idTo] {
-            if btnLatency.state == NSOnState {
-                scene?.calculateDijkstra(from, to: to, mode: .latency)
-            } else if btnBandwidth.state == NSOnState {
-                scene?.calculateDijkstra(from, to: to, mode: .bandwidth)
+        if  let from = scene!.graph?.nodes[idFrom],
+            let to = scene!.graph?.nodes[idTo] {
+            if btnLatency.state == NSControl.StateValue.on {
+                scene?.calculateDijkstra(from: from, to: to, mode: .latency)
+            } else if btnBandwidth.state == NSControl.StateValue.on {
+                scene?.calculateDijkstra(from: from, to: to, mode: .bandwidth)
             }
         } else {
             print("Incorrect node IDs")
         }
     }
     
-    @IBAction func didPushLatency(sender: AnyObject) {
-        if btnLatency.state == NSOnState {
-            btnBandwidth.state = NSOffState
+    @IBAction func didPushLatency(_ sender: Any) {
+        if btnLatency.state == NSControl.StateValue.on {
+            btnBandwidth.state = NSControl.StateValue.off
         }
     }
     
-    @IBAction func didPushBandwidth(sender: AnyObject) {
-        if btnBandwidth.state == NSOnState {
-            btnLatency.state = NSOffState
+    @IBAction func didPushBandwidth(_ sender: Any) {
+        if btnBandwidth.state == NSControl.StateValue.on {
+            btnLatency.state = NSControl.StateValue.off
         }
     }
     
     // Sends flood signal for certain node
-    @IBAction func flood(sender: AnyObject) {
+    @IBAction func flood(_ sender: Any) {
         guard self.scene != nil else { print("No GameScene"); return }
         
         let idSource = Int(self.fSource.stringValue)!
@@ -104,7 +105,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDelegate, NSTable
         
     }
     
-    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
     
@@ -125,7 +126,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDelegate, NSTable
             return nil
         }
         
-        let key = Array(sourceNode!.routes.keys).sort()[row]
+        let key = sourceNode!.routes.keys.sorted()[row]
         
         if let route = sourceNode!.routes[key] {
         
@@ -144,7 +145,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDelegate, NSTable
             
         }
         
-        return text
+        return text as AnyObject
     }
     
 

@@ -25,8 +25,8 @@ class Graph {
         
         // Check for already existing edges
         for e in oldEdges {
-            if e.u.inRange(e.v) {
-                if !edges.contains({ $0 == e }) {
+            if e.u.inRange(node: e.v) {
+                if !edges.contains { $0 == e } {
                     self.edges += [e]
                     e.update()
                 }
@@ -36,9 +36,9 @@ class Graph {
         // Check for new edges
         for (_, u) in nodes {
             for (_, v) in nodes where v != u {
-                if u.inRange(v) {
+                if u.inRange(node: v) {
                     let e = Edge(u: u, v: v)
-                    if !edges.contains({ $0 == e }) {
+                    if !edges.contains { $0 == e } {
                         self.edges += [e]
                     }
                 }
@@ -60,13 +60,13 @@ class Graph {
         dist[source.id] = 0
         
         while q.count > 0 {
-            let i = minDist(q, dist: dist)
+            let i = minDist(q: q, dist: dist)
             let u = q[i]
-            q.removeAtIndex(i)
+            q.remove(at: i)
             
-            for (_, v) in nodes where u.inRange(v) {
+            for (_, v) in nodes where u.inRange(node: v) {
                 let alt = dist[u.id]! + Double(Edge(u: u, v: v).length)
-                if alt < dist[v.id] {
+                if alt < dist[v.id]! {
                     dist[v.id] = alt
                     prev[v.id] = u
                 }
@@ -81,8 +81,8 @@ class Graph {
     private func minDist(q:[Node], dist:[Int: Double]) -> Int {
         var m = Double.infinity
         var index:Int = 0
-        for (i, n) in q.enumerate() {
-            if dist[n.id] < m {
+        for (i, n) in q.enumerated() {
+            if dist[n.id]! < m {
                 m = dist[n.id]!
                 index = i
             }
@@ -104,13 +104,13 @@ class Graph {
         width[source.id] = Double.infinity
         
         while q.count > 0 {
-            let i = maxWidth(q, width: width) // minDist(q, dist: dist)
+            let i = maxWidth(q: q, width: width) // minDist(q, dist: dist)
             let u = q[i]
-            q.removeAtIndex(i)
+            q.remove(at: i)
             
-            for (_, v) in nodes where u.inRange(v) {
+            for (_, v) in nodes where u.inRange(node: v) {
                 let alt = min(width[u.id]!, Double(Edge(u: u, v: v).w))
-                if alt > width[v.id] {
+                if alt > width[v.id]! {
                     width[v.id] = alt
                     prev[v.id] = u
                 }
@@ -125,8 +125,8 @@ class Graph {
     private func maxWidth(q:[Node], width:[Int: Double]) -> Int {
         var m:Double = 0
         var index:Int = 0
-        for (i, n) in q.enumerate() {
-            if width[n.id] > m {
+        for (i, n) in q.enumerated() {
+            if width[n.id]! > m {
                 m = width[n.id]!
                 index = i
             }

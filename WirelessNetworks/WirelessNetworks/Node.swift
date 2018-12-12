@@ -38,22 +38,22 @@ class Node: Equatable {
         
         // prepares visual representation
         circle = SKShapeNode(circleOfRadius: 15)
-        circle.fillColor = SKColor.blueColor()
+        circle.fillColor = SKColor.blue
         circle.name = "circle:\(label)"
         circle.zPosition = 45
         
         rangeCircle = SKShapeNode(circleOfRadius: self.range)
-        rangeCircle.fillColor = SKColor.blueColor()
+        rangeCircle.fillColor = SKColor.blue
         rangeCircle.alpha = 0.2
         rangeCircle.zPosition = 30
 
         text = SKLabelNode(text: "\(label)")
         text.fontName = "San Francisco"
         text.fontSize = 20
-        text.fontColor = SKColor.whiteColor()
+        text.fontColor = SKColor.white
         text.zPosition = 50
         
-        bandwidth = Int.random(1..<11)
+        bandwidth = Int.random(range: 1..<11)
         
         print("Node \(label) has bandwidth \(bandwidth)")
         
@@ -70,7 +70,7 @@ class Node: Equatable {
     }
     
     func inRange(node:Node) -> Bool {
-        return self.euclidianDistance(node.position) <= self.range
+        return self.euclidianDistance(p: node.position) <= self.range
     }
     
     private func euclidianDistance(p:CGPoint) -> CGFloat {
@@ -103,9 +103,9 @@ class Node: Equatable {
         self.flooding = true
         self.routes = [self.id:(self.id, 0, Double.infinity)]
         
-        for (_, v) in self.graph!.nodes where self.inRange(v) && v != self {
+        for (_, v) in self.graph!.nodes where self.inRange(node: v) && v != self {
             
-            let vWeight = self.euclidianDistance(v.position) //CGFloat(1.0)
+            let vWeight = self.euclidianDistance(p: v.position) //CGFloat(1.0)
             let vWidth = Double(min(self.bandwidth, v.bandwidth))
             v.flood()
             
@@ -151,5 +151,5 @@ class Node: Equatable {
 }
 
 func ==(lhs: Node, rhs: Node) -> Bool {
-    return lhs.equals(rhs)
+    return lhs.equals(another: rhs)
 }

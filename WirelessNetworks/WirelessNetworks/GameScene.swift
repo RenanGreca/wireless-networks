@@ -23,18 +23,18 @@ class GameScene: SKScene {
     var from: Node?
     var to: Node?
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         graph = Graph()
-        self.createNodes(10)
+        self.createNodes(n: 10)
     }
     
     // Gets click event
     // If a node is clicked, drag it
     // Else, create a new one
-    override func mouseDown(theEvent: NSEvent) {
-        let location = theEvent.locationInNode(self)
+    override func mouseDown(with theEvent: NSEvent) {
+        let location = theEvent.location(in: self)
         
-        for touchedNode in self.nodesAtPoint(location) {
+        for touchedNode in self.nodes(at: location) {
             if let node = touchedNode as? SKShapeNode {
                 if let n = node.name {
                     
@@ -51,8 +51,8 @@ class GameScene: SKScene {
             
             let node = Node(x: location.x, y: location.y, label: graph!.nodes.count, range: nil)
             
-            graph!.add(node)
-            node.addToScene(self)
+            graph!.add(node: node)
+            node.addToScene(scene: self)
             
             self.selectedNode = node
         }
@@ -60,8 +60,8 @@ class GameScene: SKScene {
     }
     
     // Gets drag event
-    override func mouseDragged(theEvent: NSEvent) {
-        let location = theEvent.locationInNode(self)
+    override func mouseDragged(with theEvent: NSEvent) {
+        let location = theEvent.location(in: self)
 //        self.flooding = false
         
         if let node = self.selectedNode {
@@ -72,33 +72,33 @@ class GameScene: SKScene {
     }
     
     // Gets click release event
-    override func mouseUp(theEvent: NSEvent) {
+    override func mouseUp(with theEvent: NSEvent) {
         self.selectedNode = nil
     }
     
     // 60 frames per second
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
-        self.removeChildrenInArray(self.lines)
+        self.removeChildren(in: self.lines)
         self.lines = []
-        self.drawEdges(self.graph!.edges)
+        self.drawEdges(edges: self.graph!.edges)
         
         self.graph?.findEdges()
         if flooding {
             source!.flood()
-            let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+            let appDelegate = NSApplication.shared.delegate as! AppDelegate
             appDelegate.tableView.reloadData()
         }
         
         if self.calculatingDijkstra {
             if self.modeDijkstra == .latency {
-                self.graph!.dijkstra(from!)
+                self.graph!.dijkstra(source: from!)
             } else {
-                self.graph!.bandwidthDijkstra(from!)
+                self.graph!.bandwidthDijkstra(source: from!)
             }
-            self.removeChildrenInArray(self.pathLines)
-            drawPath(from!, to: to!)
+            self.removeChildren(in: self.pathLines)
+            drawPath(from: from!, to: to!)
         }
     }
     
@@ -109,14 +109,14 @@ class GameScene: SKScene {
         let yRange = 0..<Int(self.frame.height)
         
         for i in 0..<n {
-            let x = CGFloat(Int.random(xRange))
-            let y = CGFloat(Int.random(yRange))
+            let x = CGFloat(Int.random(range: xRange))
+            let y = CGFloat(Int.random(range: yRange))
             
             let node = Node(x:x, y:y, label: i, range:nil)
             nodes[i] = node
             
-            self.graph?.add(node)
-            node.addToScene(self)
+            self.graph?.add(node: node)
+            node.addToScene(scene: self)
         }
         
         return nodes
@@ -146,11 +146,13 @@ class GameScene: SKScene {
             while (v != from) {
                 let line = SKShapeNode()
                 line.lineWidth = CGFloat(min(u.bandwidth, v.bandwidth)*2)
-                line.strokeColor = SKColor.yellowColor()
+                line.strokeColor = SKColor.yellow
                 
-                let path = CGPathCreateMutable()
-                CGPathMoveToPoint(path, nil, u.position.x, u.position.y)
-                CGPathAddLineToPoint(path, nil, v.position.x, v.position.y)
+                let path = CGMutablePath()
+                path.move(to: u.position)
+//                CGPathMoveToPoint(path, nil, u.position.x, u.position.y)
+                path.addLine(to: v.position)
+//                CGPathAddLineToPoint(path, nil, v.position.x, v.position.y)
                 line.path = path
                 line.zPosition = 36
                 
@@ -163,11 +165,13 @@ class GameScene: SKScene {
             
             let line = SKShapeNode()
             line.lineWidth = CGFloat(min(u.bandwidth, v.bandwidth)*2)
-            line.strokeColor = SKColor.yellowColor()
+            line.strokeColor = SKColor.yellow
             
-            let path = CGPathCreateMutable()
-            CGPathMoveToPoint(path, nil, u.position.x, u.position.y)
-            CGPathAddLineToPoint(path, nil, v.position.x, v.position.y)
+            let path = CGMutablePath()
+            path.move(to: u.position)
+//            CGPathMoveToPoint(path, nil, u.position.x, u.position.y)
+            path.addLine(to: v.position)
+//            CGPathAddLineToPoint(path, nil, v.position.x, v.position.y)
             line.path = path
             line.zPosition = 36
             
